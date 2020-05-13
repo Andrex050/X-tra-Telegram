@@ -33,6 +33,6 @@ async def gsearch(q_event):
             msg += f"\n• [{title}]({link})\n"
         except IndexError:
             break
-    await q_event.edit("**💭 Cercando in Google:**` " + match + ".`\n\n**🔗 Risultati:** \n" +
+    await q_event.edit("**💭 Cercando su Google:**` " + match + ".`\n\n**🔗 Risultati:** \n" +
                        msg,
                        link_preview=False)
