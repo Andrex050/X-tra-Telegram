@@ -7,7 +7,7 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    await event.edit("__🔄 Caricamento...__")
+    await event.edit("**🔄 Caricamento...**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    await event.edit("**💭 Ping:** `{}`ms".format(ms))
+    await event.edit("**💭 Ping:** `{}`".format(ms))
