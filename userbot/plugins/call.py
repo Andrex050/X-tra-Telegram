@@ -38,24 +38,22 @@ async def _(event):
 
         animation_chars = [
         
-            "`Connecting To Telegram Headquarters...`",
-            "`Call Connected.`",
-            "`Telegram: Hello This is Telegram HQ. Who is this?`",
-            "`Me: Yo this is` @Dark_Princ3 ,`Please Connect me to my lil bro,Pavel Durov`",
-            "`User Authorised.`",
-            "`Calling Pavel Durov`  `At +916969696969`",
-            "`Private  Call Connected...`",
-            "`Me: Hello Sir, Please Ban This Telegram Account.`",    
-            "`Pavel: May I Know Who Is This?`",
-            "`Me: Yo Brah, I Am` @Dark_Princ3 ",
-            "`Pavel: OMG!!! Long time no see, Wassup Brother...\nI'll Make Sure That Guy Account Will Get Blocked Within 24Hrs.`",
-            "`Me: Thanks, See You Later Brah.`",
-            "`Pavel: Please Don't Thank Brah, Telegram Is Our's. Just Gimme A Call When You Become Free.`",
-            "`Me: Is There Any Issue/Emergency???`",
-            "`Pavel: Yes Sur, There Is A Bug In Telegram v69.6.9.\nI Am Not Able To Fix It. If Possible, Please Help Fix The Bug.`",
-            "`Me: Send Me The App On My Telegram Account, I Will Fix The Bug & Send You.`",
-            "`Pavel: Sure Sur \nTC Bye Bye :)`",
-            "`Private Call Disconnected.`"
+            "`Chiamata a telegram in corso...`",
+            "`Chiamata connessa.`",
+            "`Telegram: Ciao, di cosa hai bisogno?`",
+            "`Io: Yo, sono `@zNotASH`. Senti, mi potresti passare Pavel Durov?`",
+            "`Utente Autorizzato!.`",
+            "`Chiamata in corso a Pavel Durov...`  `N. +916969696969`",
+            "`Chiamata connessa.`",
+            "`Io: Yo Durov, potresti bannare questo account Telegram?`
+            "`Pavel: Uhm? Posso sapere chi sei?`
+            "`Io: Bro? Sono @zNotASH",
+            "`Pavel: OMG!!! Da quanto tempo! Ciao ASH!...\nMi assicurerò che quell'account verrà bannato entro 24 ore!`",
+            "`Io: Grazie, ci vediamo fratello.`",
+            "`Pavel: Non ringraziarmi! Fatti sentire quando sarai libero!`",
+            "`Io: Certo, sarà fatto! Ci sentiamo!`",
+            "`Pavel: Me lo auguro! Ciao!`",
+            "`Chiamata terminata.`"
         ]
 
         for i in animation_ttl:
