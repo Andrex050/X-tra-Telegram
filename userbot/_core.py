@@ -28,10 +28,10 @@ async def install(event):
                 path1 = Path(downloaded_file_name)
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
-                await event.edit("Installed Plugin `{}`".format(os.path.basename(downloaded_file_name)))
+                await event.edit("**✅ Plugin installato!**\n📚 **Plugin:** `{}`".format(os.path.basename(downloaded_file_name)))
             else:
                 os.remove(downloaded_file_name)
-                await event.edit("Errors! This plugin is already installed/pre-installed.")
+                await event.edit("❌** Errore:** `Questo plugin è già installato.`")
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
             os.remove(downloaded_file_name)
@@ -55,7 +55,7 @@ async def send(event):
     )
     end = datetime.now()
     time_taken_in_ms = (end - start).seconds
-    await event.edit("Uploaded {} in {} seconds".format(input_str, time_taken_in_ms))
+    await event.edit("**✅ Upload di** `{}` **completato in** `{}` **secondi.**".format(input_str, time_taken_in_ms))
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
 
@@ -66,9 +66,9 @@ async def unload(event):
     shortname = event.pattern_match["shortname"]
     try:
         remove_plugin(shortname)
-        await event.edit(f"Unloaded {shortname} successfully")
+        await event.edit(f"✅** Unload completato!**\n📚 **Plugin:** `{shortname}`")
     except Exception as e:
-        await event.edit("Successfully unload {shortname}\n{}".format(shortname, str(e)))
+        await event.edit("✅** Unload completato!**\n📚 **Plugin:** `{shortname}`\n{}".format(shortname, str(e)))
 
 @command(pattern="^.load (?P<shortname>\w+)$", outgoing=True)
 async def load(event):
@@ -81,6 +81,6 @@ async def load(event):
         except:
             pass
         load_module(shortname)
-        await event.edit(f"Successfully loaded {shortname}")
+        await event.edit(f"✅** Load completato!**\n📚 **Plugin:** `{shortname}`")
     except Exception as e:
         await event.edit(f"Could not load {shortname} because of the following error.\n{str(e)}")
