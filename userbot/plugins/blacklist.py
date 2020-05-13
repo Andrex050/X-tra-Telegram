@@ -36,7 +36,7 @@ async def on_add_black_list(event):
     to_blacklist = list(set(trigger.strip() for trigger in text.split("\n") if trigger.strip()))
     for trigger in to_blacklist:
         sql.add_to_blacklist(event.chat_id, trigger.lower())
-    await event.edit("🔐 {} **aggiunto nella blacklist di questa chat!**".format(len(to_blacklist)))
+    await event.edit("🔐 {} ** utente aggiunto nella blacklist di questa chat!**".format(len(to_blacklist)))
 
 
 @borg.on(admin_cmd("listbl"))
@@ -47,7 +47,7 @@ async def on_view_blacklist(event):
         for trigger in all_blacklisted:
             OUT_STR += f"• `{trigger}` \n"
     else:
-        OUT_STR = "**🔓 Nessun utente in blacklist!**\n**➡️ Aggiungi utenti in blacklist con il comando:** `.addblacklist`"
+        OUT_STR = "**🔓 Nessun utente in blacklist!**\n**ℹ️ Aggiungi utenti in blacklist con il comando:** `.addbl @username`"
     if len(OUT_STR) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
             out_file.name = "blacklist.text"
@@ -72,4 +72,4 @@ async def on_delete_blacklist(event):
     for trigger in to_unblacklist:
         if sql.rm_from_blacklist(event.chat_id, trigger.lower()):
             successful += 1
-    await event.edit(f"**🔓 Utente** {successful} / {len(to_unblacklist)} **rimosso dalla blacklist**")
+    await event.edit(f"**🔓 Utenti/e** {successful} / {len(to_unblacklist)} **rimossi/o dalla blacklist**")
