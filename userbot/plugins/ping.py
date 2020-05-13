@@ -10,4 +10,4 @@ async def _(event):
     await event.edit("__🔄 Caricamento...__")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    await event.edit("**💭 Ping:** `{}`".format(ms))
+    await event.edit("**💭 Ping:** `{}`ms".format(ms))
