@@ -1,4 +1,4 @@
-"""command: .currency usd inr"""
+"""command: .converti usd eur"""
 from telethon import events
 import asyncio
 from datetime import datetime
