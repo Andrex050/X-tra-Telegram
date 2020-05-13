@@ -173,9 +173,6 @@ async def download_video(v_url):
     except ExtractorError:
         await v_url.edit("**❌ Errore:** `Si è verificato un errore durante l'estrazione delle informazioni.`")
         return
-    except Exception as e:
-        await v_url.edit(f"{str(type(e)): {str(e)}}")
-        return
     c_time = time.time()
     if song:
         await v_url.edit(f"**🔁 Sto caricando:** \
