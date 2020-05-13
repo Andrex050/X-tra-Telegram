@@ -45,22 +45,22 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "please check out to an official branch, and re-start the updater."
 )
 OFFICIAL_UPSTREAM_REPO = "https://github.com/znotash/X-Tra-Telegram" 
-BOT_IS_UP_TO_DATE = "`The userbot is up-to-date.\nThank you for Using this Service.`"
+BOT_IS_UP_TO_DATE = "**🔁 Aggiornamento in corso...**"
 NEW_BOT_UP_DATE_FOUND = (
-    "new update found for {branch_name}\n"
-    "changelog: \n\n{changelog}\n"
-    "updating ..."
+    "**Nuovo update trovato per:** {branch_name}\n"
+    "**Log:** \n\n{changelog}\n"
+    "**🔁 Aggiornamento in corso...**"
 )
 NEW_UP_DATE_FOUND = (
-    "New update found for {branch_name}\n"
-    "`updating ...`"
+    "**Nuovo update trovato per:** `{branch_name}`\n"
+    "**🔁 Aggiornamento in corso...**"
 )
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
-RESTARTING_APP = "re-starting heroku application"
+RESTARTING_APP = "**🔁 Riavvio di Heroku in corso...**"
 # -- Constants End -- #
 
 
@@ -100,7 +100,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("`Updating...`")
+        await message.edit("**🔁 Aggiornamento in corso...**")
         await asyncio.sleep(8)
  
     message_one = NEW_BOT_UP_DATE_FOUND.format(
