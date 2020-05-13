@@ -25,15 +25,15 @@ if len(argv) not in (1, 3, 4):
 else:
     bot.tgbot = None
     if Var.TG_BOT_USER_NAME_BF_HER is not None:
-        print("Initiating Inline Bot")
+        print("Sto avviando il bot inline...")
         # ForTheGreatrerGood of beautification
         bot.tgbot = TelegramClient(
             "TG_BOT_TOKEN",
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH
         ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
-        print("Initialisation finished with no errors")
-        print("Starting Userbot")
+        print("Avvio completato. Non ci sono stati errori!")
+        print("Sto avviando l'userbot...")
         bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
         if Var.HEROKU_APP_NAME and Var.HEROKU_API_KEY is not None:
             Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
@@ -43,8 +43,8 @@ else:
             if variable in heroku_var:
                 del heroku_var[variable]
             else:
-                print("All Good!")
-        print("Startup Completed")
+                print("Sta procedendo tutto bene!")
+        print("Avvio completato!")
     else:
         bot.start()
     
@@ -60,7 +60,7 @@ for name in files:
 
 import userbot._core
 
-print("Yay your userbot is officially working. Ja gaand mara")
+print("Avvio completato! Userbot Funzionante!")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
