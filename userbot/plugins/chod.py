@@ -12,17 +12,17 @@ async def _(event):
         await event.edit(input_str)
         animation_chars = [
         
-            "`Downloading File..`",
-            "`File Downloaded....`",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",    
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 84%\n█████████████████████▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 100%\n█████████████████████████ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nTask: 01 of 01 Files Scanned...\n\nReault: No Virus Found...`"
+            "**🔁 Sto scaricando il file..**",
+            "**📚 File scaricato.**`",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `0%`\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `4%`\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `8%`\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",    
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `20%`\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `36%`\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `52%`\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `84%`\n█████████████████████▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `100%`\n█████████████████████████ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**📚 File completati:** `01`/`01`\n\n**⚠️ Risultati:** `Nessun virus trovato!`"
         ]
 
         for i in animation_ttl:
@@ -52,17 +52,17 @@ async def _(event):
 
         animation_chars = [
         
-            "`Downloading File..`",
-            "`File Downloaded....`",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",    
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 84%\n█████████████████████▒▒▒▒ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 100%\n█████████████████████████ `",
-            "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nTask: 01 of 01 Files Scanned...\n\nReault:⚠️Virus Found⚠️\nMore Info: Torzan, Spyware, Adware`"
+            "**🔁 Sto scaricando il file..**",
+            "**📚 File scaricato.**`",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `0%`\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `4%`\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `8%`\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",    
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `20%`\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `36%`\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `52%`\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `84%`\n█████████████████████▒▒▒▒ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**🔁 Scan in corso...** `100%`\n█████████████████████████ `",
+            "**🔁 Scansione totale in corso..**\n\n\n**ℹ️ Iscrizione:** `Utente Pro`\n**📆 Valido fino a:** `31/12/2099`\n\n**📚 File completati:** `01`/`01`\n\n**⚠️ Risultati:** `Virus trovati! (Worm, Trojan, Spyware, Adware, Exploit, Rootkit, Rogues / Scareware)`"
         ]
 
         for i in animation_ttl:
