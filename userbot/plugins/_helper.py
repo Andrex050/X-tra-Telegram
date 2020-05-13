@@ -14,13 +14,13 @@ async def cmd_list(event):
                     string += "\n"
                 string += "\n"
             if len(string) > 4095:
-                await borg.send_message(event.chat_id, "**Fai:** `.help cmd`")
+                await borg.send_message(event.chat_id, "Do .help cmd")
                 await asyncio.sleep(5)
             else:
                 await event.edit(string)
         elif input_str:
             if input_str in CMD_LIST:
-                string = "**ℹ️ Comandi trovati in** {}:\n".format(input_str)
+                string = "Commands found in {}:\n".format(input_str)
                 for i in CMD_LIST[input_str]:
                     string += "    " + i
                     string += "\n"
@@ -28,8 +28,15 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " **non è un plugin valido!**")
         else:
-            help_string = "**🤖 ash's userbot.** \n\n__⚠️ Fai__ `.help nome_plugin` __per avere informazioni dettagliate su quel plugin.__"
+            help_string = """test \n[ash bello](https://www.moddingunited.xyz/) \n
+`Userbot Helper to reveal all the commands`\n__Do .help plugin_name for commands, in case popup doesn't appear.__"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
             )
+            await results[0].click(
+                event.chat_id,
+                reply_to=event.reply_to_msg_id,
+                hide_via=True
+            )
+            await event.delete()
