@@ -43,7 +43,7 @@ async def carbon_api(e):
  if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
  
    """ A Wrapper for carbon.now.sh """
-   await e.edit("`Processing..`")
+   await e.edit("`🔁 Caricamento...`")
    CARBON = 'https://carbon.now.sh/?l={lang}&code={code}'
    global CARBONLANG
    textx = await e.get_reply_message()
@@ -59,7 +59,7 @@ async def carbon_api(e):
          pcode = str(textx.message)
          skeme = None # Importing message to module
    code = quote_plus(pcode) # Converting to urlencoded
-   await e.edit("`Meking Carbon...\n25%`")
+   await e.edit("`🔁 Caricamento...\n25%`")
    url = CARBON.format(code=code, lang=CARBONLANG)
    chrome_options = Options()
    chrome_options.add_argument("--headless")
@@ -72,7 +72,7 @@ async def carbon_api(e):
    chrome_options.add_experimental_option('prefs', prefs)
    driver = webdriver.Chrome(executable_path=CHROME_DRIVER, options=chrome_options)
    driver.get(url)
-   await e.edit("`Be Patient...\n50%`")
+   await e.edit("`🔁 Caricamento...\n50%`")
    download_path = './'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
    params = {'cmd': 'Page.setDownloadBehavior', 'params': {'behavior': 'allow', 'downloadPath': download_path}}
@@ -89,17 +89,17 @@ async def carbon_api(e):
    driver.find_element_by_id("export-menu").click()
    driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-   await e.edit("`Processing..\n75%`")
+   await e.edit("`🔁 Caricamento...\n75%`")
    # Waiting for downloading
    sleep(2.5)
    color_name = driver.find_element_by_xpath('/html/body/div[1]/main/div[2]/div[2]/div[1]/div[1]/div/span[2]/input').get_attribute('value')
-   await e.edit("`Done Dana Done...\n100%`")
+   await e.edit("`🔁 Caricamento...\n100%`")
    file = './carbon.png'
-   await e.edit("`Uploading..`")
+   await e.edit("`🔁 Upload..`")
    await e.client.send_file(
          e.chat_id,
          file,
-         caption="<< `Here's your carbon!` \n **Carbonised by** [@anubisxx.](https://github.com/Dark-Princ3/X-tra-Telegram)>>\n**Colour Scheme: **`{}`".format(color_name),
+         caption="**✅ Processato!** \n**🎇 Colore sottofondo: **`{}`".format(color_name),
          force_document=True,
          reply_to=e.message.reply_to_msg_id,
          )
