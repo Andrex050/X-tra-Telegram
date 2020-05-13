@@ -34,13 +34,13 @@ async def progress(current, total, event, start, type_of_ps, file_name=None):
             ''.join(["▱" for i in range(10 - math.floor(percentage / 10))]),
             round(percentage, 2))
         tmp = progress_str + \
-            "{0} of {1}\n**Tempo rimasto:** {2}".format(
+            "{0} of {1}\nETA: {2}".format(
                 humanbytes(current),
                 humanbytes(total),
                 time_formatter(estimated_total_time)
             )
         if file_name:
-            await event.edit("{}\n**File:** `{}`\n{}".format(
+            await event.edit("{}\nFile Name: `{}`\n{}".format(
                 type_of_ps, file_name, tmp))
         else:
             await event.edit("{}\n{}".format(type_of_ps, tmp))
@@ -82,7 +82,7 @@ async def download_video(v_url):
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
 
-    await v_url.edit("**🔁 Caricamento...**")
+    await v_url.edit("`Preparing to download...`")
 
     if type == "a":
         opts = {
@@ -144,18 +144,18 @@ async def download_video(v_url):
         video = True
 
     try:
-        await v_url.edit("**🔁 Caricamento...**")
+        await v_url.edit("`Fetching data, please wait..`")
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url)
     except DownloadError as DE:
         await v_url.edit(f"`{str(DE)}`")
         return
     except ContentTooShortError:
-        await v_url.edit("`Questo download è troppo corto.`")
+        await v_url.edit("`The download content was too short.`")
         return
     except GeoRestrictedError:
         await v_url.edit(
-            "`Questo video non è disponibile nel tuo paese.`"
+            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
         )
         return
     except MaxDownloadsReached:
