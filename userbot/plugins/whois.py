@@ -110,10 +110,10 @@ async def fetch_info(replied_user, event):
     last_name = last_name.replace(
         "\u2060", "") if last_name else ("Questo utente non ha cognome.")
     username = "@{}".format(username) if username else (
-        "Questo utente non ha Username.")
-    user_bio = "Questo utente non ha descrizione." if not user_bio else user_bio
+        "Questo utente non ha un Username.")
+    user_bio = "Questo utente non ha una descrizione." if not user_bio else user_bio
 
-    caption = "<b>ℹ️ INFO UTENTE:</b> \n\n"
+    caption = "<b>ℹ️ INFO UTENTE</b> \n\n"
     caption += f"• 💭 <b>Nome:</b> <code>{first_name}</code> \n"
     caption += f"• 💭 <b>Cognome:</b> <code>{last_name}</code> \n"
     caption += f"• 🖇 <b>Username:</b> {username} \n"
@@ -131,6 +131,5 @@ async def fetch_info(replied_user, event):
 
 CMD_HELP.update({
     "whois":
-    ".whois <username>(or reply to the target person's message)\
-    \nUsage: Get info about a user."
+    ".whois <username>(o reply)"
 })
