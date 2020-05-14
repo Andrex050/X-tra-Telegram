@@ -17,11 +17,11 @@ async def _(event):
     if event.fwd_from:
         return
     # await asyncio.sleep(2)
-    # await event.edit("**🔁 Riavvio in corso** [██░] **...**\n⚠️ **Digita:** `.on` **per verificare se l'userbot è online.**")
+    # await event.edit("**🔁 Riavvio in corso**...**\n⚠️ **Digita:** `.on` **per verificare se l'userbot è online.**")
     # await asyncio.sleep(2)
-    # await event.edit("**🔁 Riavvio in corso** [██░] **...**\n⚠️ **Digita:** `.on` **per verificare se l'userbot è online.**")
+    # await event.edit("**🔁 Riavvio in corso**...**\n⚠️ **Digita:** `.on` **per verificare se l'userbot è online.**")
     # await asyncio.sleep(2)
-    await event.edit("**🔁 Riavvio in corso** [██░] **...**\n⚠️ **Digita:** `.on` **per verificare se l'userbot è online.**")
+    await event.edit("**🔁 Riavvio in corso**...**\n⚠️ **Digita:** `.on` **per verificare se l'userbot è online.**")
     await borg.disconnect()
     # https://archive.is/im3rt
     os.execl(sys.executable, sys.executable, *sys.argv)
@@ -33,5 +33,5 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("**🔁 Spegnimento in corso** [██░] **...**")
+    await event.edit("**🔁 Spegnimento in corso...**")
     await borg.disconnect()
