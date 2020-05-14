@@ -83,4 +83,4 @@ async def load(event):
         load_module(shortname)
         await event.edit(f"✅** Load completato!**\n📚 **Plugin:** `{shortname}`")
     except Exception as e:
-        await event.edit(f"Could not load {shortname} because of the following error.\n{str(e)}")
+        await event.edit(f"**❌ Errore:** `Non sono riuscito ad installare` `{shortname}` `a causa di un errore.`\n{str(e)}")
