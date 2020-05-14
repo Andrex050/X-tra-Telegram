@@ -48,7 +48,7 @@ async def _(event):
         location = str(e)
     caption = """<b>ℹ️ INFO UTENTE</b>
 <b>  • 💭 ID:</b> <code>{}</code>
-<b>  • 🔗 Link:</b> <a href='tg://user?id={}'>{}</a>
+<b>  • 🔗 Nome:</b> <a href='tg://user?id={}'>{}</a>
 <b>  • 📝 Bio:</b> <code>{}</code>
 <b>  • 🔬 DC:</b> <code>{}</code>
 <b>  • 🎆 Foto profilo:</b> <code>{}</code>
