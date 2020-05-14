@@ -26,4 +26,4 @@ async def _(event):
         else:
             await event.delete()
     else:
-        await event.edit("Reply to a message to pin the message in this Channel.")
+        await event.edit("**❌ Errore:** `Rispondi ad un messaggio.`")
