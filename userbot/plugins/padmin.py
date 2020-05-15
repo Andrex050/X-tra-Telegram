@@ -32,26 +32,25 @@ async def _(event):
 
         animation_chars = [
         
-            "**Promoting User As Admin...**",
-            "**Enabling All Permissions To User...**",
-            "**(1) Send Messages: ☑️**",
-            "**(1) Send Messages: ✅**",
-            "**(2) Send Media: ☑️**",
-            "**(2) Send Media: ✅**",
-            "**(3) Send Stickers & GIFs: ☑️**",
-            "**(3) Send Stickers & GIFs: ✅**",    
-            "**(4) Send Polls: ☑️**",
-            "**(4) Send Polls: ✅**",
-            "**(5) Embed Links: ☑️**",
-            "**(5) Embed Links: ✅**",
-            "**(6) Add Users: ☑️**",
-            "**(6) Add Users: ✅**",
-            "**(7) Pin Messages: ☑️**",
-            "**(7) Pin Messages: ✅**",
-            "**(8) Change Chat Info: ☑️**",
-            "**(8) Change Chat Info: ✅**",
-            "**Permission Granted Successfully**",
-            "**pRoMooTeD SuCcEsSfUlLy bY: @A_Dark_Princ3**"
+            "**🔁 Sto promuovendo l'Utente ad Admin...**",
+            "**🔁 Abilitando tutti i permessi...**",
+            "**• (1) Inviare messaggi: ☑️**",
+            "**• (1) Inviare messaggi: ✅**",
+            "**• (2) Inviare Media: ☑️**",
+            "**• (2) Inviare Media: ✅**",
+            "**• (3) Inviare Stickers & GIFs: ☑️**",
+            "**• (3) Inviare Stickers & GIFs: ✅**",    
+            "**• (4) Inviare Polls: ☑️**",
+            "**• (4) Inviare Polls: ✅**",
+            "**• (5) Aggiungere Link: ☑️**",
+            "**• (5) Aggiungere Link: ✅**",
+            "**• (6) Aggiungere Membri: ☑️**",
+            "**• (6) Aggiungere Membri: ✅**",
+            "**• (7) Fissare Messaggi: ☑️**",
+            "**• (7) Fissare Messaggi: ✅**",
+            "**• (8) Cambiare info della chat: ☑️**",
+            "**• (8) Cambiare info della chat: ✅**",
+            "**💭 Permessi cambiati correttamente!*"
 
  ]
 
