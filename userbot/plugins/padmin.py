@@ -50,8 +50,8 @@ async def _(event):
             "**(7) Fissare Messaggi: ✅**",
             "**(8) Cambiare info della chat: ☑️**",
             "**(8) Cambiare info della chat: ✅**",
-            "**💭 Permessi cambiati correttamente!*"
-            "**Bro.. stavo scherzando..! 😭*"
+            "**💭 Utente promosso ad Admin!*",
+            "**Bro.. stavo scherzando..! 😭**"
 
  ]
 
