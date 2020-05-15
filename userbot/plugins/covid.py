@@ -26,7 +26,7 @@ async def _(event):
               await event.reply("❌** Errore:** `Sblocca` @NovelCoronaBot.")
               return
           if response.text.startswith("Country"):
-             await event.edit("❌ **Errore:** ` Paese non trovato.`")
+             await event.edit("❌ **Errore:** `Paese non trovato.`")
           else: 
              await event.delete()
              await event.client.send_message(event.chat_id, response.message)
