@@ -107,11 +107,11 @@ async def fetch_info(chat, event):
     username = chat_obj_info.username if hasattr(chat_obj_info, "username") else None
     bots_list = chat.full_chat.bot_info  # this is a list
     bots = 0
-    supergroup = "<b>Sì</b>" if hasattr(chat_obj_info, "megagroup") and chat_obj_info.megagroup else "No"
-    slowmode = "<b>Sì</b>" if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled else "No"
+    supergroup = "<b>✅</b>" if hasattr(chat_obj_info, "megagroup") and chat_obj_info.megagroup else "❌"
+    slowmode = "<b>✅</b>" if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled else "❌"
     slowmode_time = chat.full_chat.slowmode_seconds if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled else None
-    restricted = "<b>Sì</b>" if hasattr(chat_obj_info, "restricted") and chat_obj_info.restricted else "No"
-    verified = "<b>Sì</b>" if hasattr(chat_obj_info, "verified") and chat_obj_info.verified else "No"
+    restricted = "<b>✅</b>" if hasattr(chat_obj_info, "restricted") and chat_obj_info.restricted else "❌"
+    verified = "<b>✅</b>" if hasattr(chat_obj_info, "verified") and chat_obj_info.verified else "❌"
     username = "@{}".format(username) if username else None
     creator_username = "@{}".format(creator_username) if creator_username else None
     #end of spaghetti block
@@ -131,57 +131,57 @@ async def fetch_info(chat, event):
     caption = "<b>ℹ️ INFO della CHAT</b>\n"
     caption += f"<b>• 💭 ID:</b> <code>{chat_obj_info.id}</code>\n"
     if chat_title is not None:
-        caption += f"<b>• 📚 Titolo del {chat_type}:</b> <code>{chat_title}</code>\n"
+        caption += f"<b>  • 📚 Titolo del {chat_type}:</b> <code>{chat_title}</code>\n"
     if former_title is not None:  # Meant is the very first title
-        caption += f"<b>• 📚 Ex Titolo:</b> {former_title}\n"
+        caption += f"<b>  • 📚 Primo Titolo:</b> {former_title}\n"
     if username is not None:
-        caption += f"<b>• ⚙️ {chat_type}:</b> <code>Pubblico</code>\n"
-        caption += f"<b>• 🔗 Link:</b> {username}\n"
+        caption += f"<b>  • ⚙️ {chat_type}:</b> <code>Pubblico</code>\n"
+        caption += f"<b>  • 🔗 Link:</b> {username}\n"
     else:
-        caption += f"<b>• ⚙️ {chat_type}:</b> <code>Privato</code>\n"
+        caption += f"<b>  • ⚙️ {chat_type}:</b> <code>Privato</code>\n"
     if creator_username is not None:
-        caption += f"<b>• 👨🏼‍💻 Creatore:</b> {creator_username}\n"
+        caption += f"<b>  • 👨🏼‍💻 Creatore:</b> {creator_username}\n"
     elif creator_valid:
-        caption += f"<b>• 👨🏼‍💻 Creatore:</b> <a href=\"tg://user?id={creator_id}\">{creator_firstname}</a>\n"
+        caption += f"<b>  • 👨🏼‍💻 Creatore:</b> <a href=\"tg://user?id={creator_id}\">{creator_firstname}</a>\n"
     if created is not None:
-        caption += f"<b>• 🗓 Creato:</b> <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
+        caption += f"<b>  • 🗓 Creato:</b> <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
     else:
-        caption += f"<b>• 🗓 Creato:</b> <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
-    caption += f"<b>• 🔬 DC:</b> {dc_id}\n"
+        caption += f"<b>  • 🗓 Creato:</b> <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
+    caption += f"<b>  • 🔬 DC:</b> {dc_id}\n"
     if exp_count is not None:
         chat_level = int((1+sqrt(1+7*exp_count/14))/2)
-        caption += f"<b>• 📊 Livello del {chat_type}:</b> <code>{chat_level}</code>\n"
+        caption += f"<b>  • 📊 Livello del {chat_type}:</b> <code>{chat_level}</code>\n"
     if messages_viewable is not None:
-        caption += f"<b>• ⌨️ Messaggi visibili:</b> <code>{messages_viewable}</code>\n"
+        caption += f"<b>  • ⌨️ Messaggi visibili:</b> <code>{messages_viewable}</code>\n"
     if messages_sent:
-        caption += f"<b>• ⌨️ Messaggi totali:</b> <code>{messages_sent}</code>\n"
+        caption += f"<b>  • ⌨️ Messaggi totali:</b> <code>{messages_sent}</code>\n"
     elif messages_sent_alt:
-        caption += f"<b>• ⌨️ Messaggi totali:</b> <code>{messages_sent_alt}</code> {warn_emoji}\n"
+        caption += f"<b>  • ⌨️ Messaggi totali:</b> <code>{messages_sent_alt}</code> {warn_emoji}\n"
     if members is not None:
-        caption += f"<b>• 👥 Membri:</b> <code>{members}</code>\n"
+        caption += f"<b>  • 👥 Membri:</b> <code>{members}</code>\n"
     if admins is not None:
-        caption += f"<b>• 💎 Amministratori:</b> <code>{admins}</code>\n"
+        caption += f"<b>  • 💎 Amministratori:</b> <code>{admins}</code>\n"
     if bots_list:
-        caption += f"<b>• 🤖 Bot:</b> <code>{bots}</code>\n"
+        caption += f"<b>  • 🤖 Bot:</b> <code>{bots}</code>\n"
     if members_online:
-        caption += f"<b>• ✅ Membri online:</b> <code>{members_online}</code>\n"
+        caption += f"<b>  • ✅ Membri online:</b> <code>{members_online}</code>\n"
     if restrcited_users is not None:
-        caption += f"<b>• 🔑 Membri limitati:</b> <code>{restrcited_users}</code>\n"
+        caption += f"<b>  • 🔑 Membri limitati:</b> <code>{restrcited_users}</code>\n"
     if banned_users is not None:
-        caption += f"<b>• 🚷 Utenti bannati:</b> <code>{banned_users}</code>\n"
+        caption += f"<b>  • 🚷 Utenti bannati:</b> <code>{banned_users}</code>\n"
     if group_stickers is not None:
-        caption += f"<b>• 📓 Sticker del {chat_type}:</b> <a href=\"t.me/addstickers/{chat.full_chat.stickerset.short_name}\">{group_stickers}</a>\n"
+        caption += f"<b>  • 📓 Sticker del {chat_type}:</b> <a href=\"t.me/addstickers/{chat.full_chat.stickerset.short_name}\">{group_stickers}</a>\n"
     caption += "\n"
     if not broadcast:
-        caption += f"<b>• 📍 Modalità lenta:</b> {slowmode}"
+        caption += f"<b>  • 📍 Modalità lenta:</b> {slowmode}"
         if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled:
             caption += f", <code>{slowmode_time}s</code>\n\n"
         else:
             caption += "\n\n"
     if not broadcast:
-        caption += f"<b>• 🛠 Supergruppo:</b> {supergroup}\n\n"
+        caption += f"<b>  • 🛠 SuperGruppo:</b> {supergroup}\n\n"
     if hasattr(chat_obj_info, "restretto"):
-        caption += f"<b>• ⚠️ Restrizioni:</b>  {restricted}\n"
+        caption += f"<b>  • ⚠️ Restrizioni:</b>  {restricted}\n"
         if chat_obj_info.restricted:
             caption += f"> Piattaforma: {chat_obj_info.restriction_reason[0].platform}\n"
             caption += f"> Motivazione: {chat_obj_info.restriction_reason[0].reason}\n"
@@ -191,9 +191,9 @@ async def fetch_info(chat, event):
     if hasattr(chat_obj_info, "scam") and chat_obj_info.scam:
     	caption += "<b>• 🛎 Truffa:</b>  <b>Sì</b>\n\n"
     if hasattr(chat_obj_info, "verificato"):
-        caption += f"<b>• 📮 Verificato da Telegram:</b> {verified}\n\n"
+        caption += f"<b>  • 📮 Verificato da Telegram:</b> {verified}\n\n"
     if description:
-        caption += f"<b>• 📝 Descrizione:</b> \n<code>{description}</code>\n"
+        caption += f"<b>  • 📝 Descrizione:</b> \n<code>{description}</code>\n"
     return caption
 
 CMD_HELP.update({
