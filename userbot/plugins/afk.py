@@ -47,13 +47,13 @@ async def _(event):
         if reason:
             await borg.send_message(event.chat_id, f"**⚠️ Modalità AFK attivata!**\n💭 **Motivo:** `{reason}.`")
         else:
-            await borg.send_message(event.chat_id, f"**⚠️ Sono AFK!**")
+            await borg.send_message(event.chat_id, f"**⚠️ Modalità AFK attivata!**")
         await asyncio.sleep(5)
         await event.delete()
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                f"Set AFK mode to True, and Reason is {reason}"
+                f"#LOG #AFK\n⚠️** Modalità AFK attivata!**\n **💭 Motivo:** `{reason}`."
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
@@ -96,7 +96,7 @@ async def on_afk(event):
     afk_end = back_alivee.replace(microsecond=0)
     if afk_start != {}:
         total_afk_time = str((afk_end - afk_start))
-    afk_since = "**a while ago**"
+    afk_since = "**tempo fa**"
     current_message_text = event.message.message.lower()
     if "afk" in current_message_text:
         # userbot's should not reply to other userbot's
@@ -126,11 +126,11 @@ async def on_afk(event):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime('%A')
             elif hours > 1:
-                afk_since = f"`{int(hours)}h{int(minutes)}m` **ago**"
+                afk_since = f"`{int(hours)}h{int(minutes)}` **fa**"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}m{int(seconds)}s` **ago**"
+                afk_since = f"`{int(minutes)}m{int(seconds)}` **fa**"
             else:
-                afk_since = f"`{int(seconds)}s` **ago**"
+                afk_since = f"`{int(seconds)}` **fa**"
         msg = None
         message_to_reply = f"**⚠️ ASH è AFK!**\nℹ️ **AFK da:** `{total_afk_time}.`" + \
             f"\n\n📚 **Motivo:** `{reason}`." \
