@@ -129,7 +129,7 @@ async def fetch_info(chat, event):
             bots += 1
 
     caption = "<b>ℹ️ INFO della CHAT</b>\n"
-    caption += f"<b>• 💭 ID:</b> <code>{chat_obj_info.id}</code>\n"
+    caption += f"<b> • 💭 ID:</b> <code>{chat_obj_info.id}</code>\n"
     if chat_title is not None:
         caption += f"<b>  • 📚 Titolo del {chat_type}:</b> <code>{chat_title}</code>\n"
     if former_title is not None:  # Meant is the very first title
