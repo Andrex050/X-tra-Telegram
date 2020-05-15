@@ -1,6 +1,6 @@
 import pyfiglet
 
-@command(pattern="^.figlet ?(.*)", outgoing=True)
+@command(pattern="^.fig ?(.*)", outgoing=True)
 async def figlet(event):
     if event.fwd_from:
         return
@@ -12,13 +12,13 @@ async def figlet(event):
         cmd = None
         text = input_str
     else:
-        await event.edit("Please add some text to figlet")
+        await event.edit("**❌ Errore:** `Devi aggiungere il testo.`)
         return
     if cmd is not None:
         try:
             font = CMD_FIG[cmd]
         except KeyError:
-            await event.edit("Invalid selected font.")
+            await event.edit("**❌ Errore:** `Testo non valido.`")
             return
         result = pyfiglet.figlet_format(text, font=font)
     else:
