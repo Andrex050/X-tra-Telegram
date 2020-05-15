@@ -16,17 +16,17 @@ async def _(event):
     input_str = event.pattern_match.group(1)
     reply_message = await event.get_reply_message()
     chat = "@NovelCoronaBot"
-    await event.edit("**🔁 Caricamento ...**")
+    await event.edit("<b>🔁 Caricamento ...</b>")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1124136160))
               await event.client.send_message(chat, "{}".format(input_str))
               response = await response 
           except YouBlockedUserError: 
-              await event.reply("**❌ Errore:** `Sblocca` @NovelCoronaBot.")
+              await event.reply("<b>❌ Errore:</b> <code>Sblocca</code> @NovelCoronaBot.")
               return
           if response.text.startswith("Country"):
-             await event.edit("**❌ Errore:** `Paese non trovato.`)
+             await event.edit("<b>❌ Errore:</b> <code>Paese non trovato.</code>)
           else: 
              await event.delete()
              await event.client.send_message(event.chat_id, response.message)
