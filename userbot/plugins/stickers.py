@@ -146,7 +146,7 @@ async def kang(args):
                         # Ensure user doesn't get spamming notifications
                         await bot.send_read_acknowledge(conv.chat_id)
                         await args.edit(
-                            f"**(➕) Sticker pack creato!** \n**📚 Sticker aggiunto!**\n **➡️ Per vederlo premi** [qui](t.me/addstickers/{packname}).",
+                            f"**(➕) Sticker pack creato!** \n**📚 Sticker aggiunto!**\n **➡️ Per vederlo premi** [qui.](t.me/addstickers/{packname}).",
                             parse_mode='md')
                         return
                 if is_anim:
@@ -165,7 +165,7 @@ async def kang(args):
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
         else:
-            await args.edit("**Il pack non esiste, creane uno nuovo!")
+            await args.edit("**🔁 Il pack non esiste, ne sto creando uno nuovo...**")
             async with bot.conversation('Stickers') as conv:
                 await conv.send_message(cmd)
                 await conv.get_response()
