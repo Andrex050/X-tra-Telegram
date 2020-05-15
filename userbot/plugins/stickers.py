@@ -19,7 +19,7 @@ PACK_FULL = "Wow! Hai finito lo spazio per questo pack!. \
 Non si possono aggiungere più di 120 sticker a pack."
 
 
-@register(outgoing=True, pattern="^.kang")
+@register(outgoing=True, pattern="^.sticker")
 async def kang(args):
     """ For .kang command, kangs stickers or creates new ones. """
     user = await bot.get_me()
