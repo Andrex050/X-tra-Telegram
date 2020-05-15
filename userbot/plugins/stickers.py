@@ -15,8 +15,8 @@ from telethon.tl.types import DocumentAttributeFilename, MessageMediaPhoto
 from userbot import CMD_HELP, bot
 from userbot.events import register
 
-PACK_FULL = "Whoa! That's probably enough stickers for one pack, give it a break. \
-A pack can't have more than 120 stickers at the moment."
+PACK_FULL = "Wow! Hai finito lo spazio per questo pack!. \
+Non si possono aggiungere più di 120 sticker a pack."
 
 
 @register(outgoing=True, pattern="^.kang")
@@ -49,10 +49,10 @@ async def kang(args):
             is_anim = True
             photo = 1
         else:
-            await args.edit("**File non supportato!**")
+            await args.edit("**❌ Errore:** `File non supportato!`")
             return
     else:
-        await args.edit("**Rispondi ad uno sticker.**")
+        await args.edit("**❌ Errore:** `Rispondi ad uno sticker.`")
         return
 
     if photo:
