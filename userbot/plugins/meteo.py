@@ -142,7 +142,7 @@ async def set_default_city(city):
 
     if len(OWM_API) < 1:
         await city.edit(
-            "**⚠️ Ottieni prima una chiave API da:** https://openweathermap.org/ "")
+            "**⚠️ Ottieni prima una chiave API da:** https://openweathermap.org/ ")
         return
 
     global DEFCITY
