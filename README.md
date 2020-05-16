@@ -2,16 +2,12 @@
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 
-### UniBorg Configuration
+### Configurazioni di UniBorg
 
-The UniBorg Config is situated in `userbot/uniborgConfig.py`.
+Le config di UniBorg si trovano in: `userbot/uniborgConfig.py`.
 
-**Heroku Configuration**
-Simply just leave the Config as it is.
 
-**Local Configuration**
-Check [Line 111](https://github.com/Total-Noob-69/X-tra-Telegram/blob/master/userbot/uniborgConfig.py#L111) and start adding your vars there.
-Fortunately there are no Mandatory vars for the UniBorg Support Config.
+
 
 ## Mandatory Vars
 
