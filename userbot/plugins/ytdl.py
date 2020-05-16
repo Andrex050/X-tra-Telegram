@@ -34,13 +34,13 @@ async def progress(current, total, event, start, type_of_ps, file_name=None):
             ''.join(["▱" for i in range(10 - math.floor(percentage / 10))]),
             round(percentage, 2))
         tmp = progress_str + \
-            "{0} of {1}\nTempo rimanente: {2}".format(
+            "{0} di {1}\n• 🕐** Tempo rimanente:** {2}".format(
                 humanbytes(current),
                 humanbytes(total),
                 time_formatter(estimated_total_time)
             )
         if file_name:
-            await event.edit("{}\nFile: `{}`\n{}".format(
+            await event.edit("{}\n**• 📚 File:** `{}`\n{}".format(
                 type_of_ps, file_name, tmp))
         else:
             await event.edit("{}\n{}".format(type_of_ps, tmp))
@@ -82,7 +82,7 @@ async def download_video(v_url):
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
 
-    await v_url.edit("**Caricamento ...**")
+    await v_url.edit("**🔁 Caricamento ...**")
 
     if type == "a":
         opts = {
@@ -144,7 +144,7 @@ async def download_video(v_url):
         video = True
 
     try:
-        await v_url.edit("**Caricamento...**")
+        await v_url.edit("**🔁 Caricamento...**")
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url)
     except DownloadError as DE:
@@ -178,7 +178,7 @@ async def download_video(v_url):
         return
     c_time = time.time()
     if song:
-        await v_url.edit(f"**Preparazione in corso...**\
+        await v_url.edit(f"**🔁 Preparazione in corso...**\
         \n**{ytdl_data['title']}**\
         \nby *{ytdl_data['uploader']}*")
         await v_url.client.send_file(
@@ -197,7 +197,7 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await v_url.edit(f"**Preparazione in corso...**\
+        await v_url.edit(f"**🔁 Preparazione in corso...**\
         \n**{ytdl_data['title']}**\
         \nby *{ytdl_data['uploader']}*")
         await v_url.client.send_file(
