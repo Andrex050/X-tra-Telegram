@@ -49,7 +49,7 @@ async def get_weather(weather):
     if not weather.pattern_match.group(1):
         CITY = DEFCITY
         if not CITY:
-            await weather.edit("**⚠️ Specifica una città o mettine una predefinita.**\n**➡️ Digita:** `.setcity nome_città`"
+            await weather.edit("**⚠️ Specifica una città o impostane una predefinita.**\n**➡️ Digita:** `.setcity nome_città`"
                                )
             return
     else:
@@ -122,14 +122,15 @@ async def get_weather(weather):
     await weather.edit(
         f"**• 🌡 Temperatura:** `{celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
         +
-        f"↳ 🌨 __Minima:__ `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
+        f"↳ ❄️ __Minima:__ `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
         +
         f"↳ 🔥 __Massima:__ `{celsius(max_temp)}°C | {fahrenheit(max_temp)}°F`\n"
         + f"**• 💧 Umidità:** `{humidity}%`\n" +
         f"**• 💨 Vento:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n" +
         f"**• 🌄 Alba:** `{sun(sunrise)}`\n" +
         f"**• 🌅 Tramonto:** `{sun(sunset)}`\n\n\n" + f"**{desc}**\n" +
-        f"**• 🌎 {cityname}, {fullc_n}**\n" + f"`{time}`")
+        f"**• 🌎 {cityname}, {fullc_n}**\n" + 
+        f"• 📆 `{time}`")
 
 
 @register(outgoing=True, pattern="^.setcity(?: |$)(.*)")
