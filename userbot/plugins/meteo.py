@@ -120,6 +120,8 @@ async def get_weather(weather):
         return xx
 
     await weather.edit(
+        f"**• 🌎 {cityname}, {fullc_n}**\n" + 
+        f"• 📆 `{time}`+\n\n "
         f"**• 🌡 Temperatura:** `{celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
         +
         f"↳ ❄️ __Minima:__ `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
@@ -128,9 +130,7 @@ async def get_weather(weather):
         + f"**• 💧 Umidità:** `{humidity}%`\n" +
         f"**• 💨 Vento:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n" +
         f"**• 🌄 Alba:** `{sun(sunrise)}`\n" +
-        f"**• 🌅 Tramonto:** `{sun(sunset)}`\n\n\n" +
-        f"**• 🌎 {cityname}, {fullc_n}**\n" + 
-        f"• 📆 `{time}`")
+        f"**• 🌅 Tramonto:** `{sun(sunset)}`")
 
 
 @register(outgoing=True, pattern="^.setcity(?: |$)(.*)")
