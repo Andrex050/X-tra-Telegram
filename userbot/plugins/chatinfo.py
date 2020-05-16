@@ -70,7 +70,7 @@ async def fetch_info(chat, event):
     broadcast = chat_obj_info.broadcast if hasattr(chat_obj_info, "broadcast") else False
     chat_type = "Canale" if broadcast else "Gruppo"
     chat_title = chat_obj_info.title
-    warn_emoji = emojize(":attenzione:")
+    warn_emoji = emojize("")
     try:
         msg_info = await event.client(GetHistoryRequest(peer=chat_obj_info.id, offset_id=0, offset_date=datetime(2010, 1, 1), 
                                                         add_offset=-1, limit=1, max_id=0, min_id=0, hash=0))
