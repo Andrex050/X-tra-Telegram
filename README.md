@@ -1,3 +1,4 @@
+### Heroku
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -17,4 +18,4 @@ Le config di UniBorg si trovano in: `userbot/uniborgConfig.py`.
 
 ### ash's link
 
-• t.me/zNotASH
+• https://t.me/zNotASH
