@@ -52,7 +52,7 @@ async def kang(args):
             await args.edit("**❌ Errore:** `File non supportato!`")
             return
     else:
-        await args.edit("**❌ Errore:** `Rispondi ad uno sticker.`")
+        await args.edit("**❌ Errore:** `Rispondi ad uno sticker/media.`")
         return
 
     if photo:
@@ -165,7 +165,7 @@ async def kang(args):
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
         else:
-            await args.edit("**🔁 Il pack non esiste, ne sto creando uno nuovo...**")
+            await args.edit("**🔁 Pack non trovato, ne sto creando uno nuovo...**")
             async with bot.conversation('Stickers') as conv:
                 await conv.send_message(cmd)
                 await conv.get_response()
