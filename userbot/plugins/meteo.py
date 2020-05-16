@@ -124,11 +124,11 @@ async def get_weather(weather):
         +
         f"↳ ❄️ __Minima:__ `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
         +
-        f"↳ 🔥 __Massima:__ `{celsius(max_temp)}°C | {fahrenheit(max_temp)}°F`\n"
+        f"↳ 🔥 __Massima:__ `{celsius(max_temp)}°C | {fahrenheit(max_temp)}°F`\n\n"
         + f"**• 💧 Umidità:** `{humidity}%`\n" +
         f"**• 💨 Vento:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n" +
         f"**• 🌄 Alba:** `{sun(sunrise)}`\n" +
-        f"**• 🌅 Tramonto:** `{sun(sunset)}`\n\n\n" + f"**{desc}**\n" +
+        f"**• 🌅 Tramonto:** `{sun(sunset)}`\n\n\n" +
         f"**• 🌎 {cityname}, {fullc_n}**\n" + 
         f"• 📆 `{time}`")
 
