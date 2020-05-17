@@ -189,9 +189,9 @@ async def blockpm(block):
         await block.edit("`**💭 ASH non approva i tuoi messaggi in privato!**")
 
         if await block_pm(block.chat_id) is False:
-            return await block.edit("**🔁 Caricamento ...**")
+            return await block.edit("**🔁 Caricamento...**")
         else:
-            return await block.edit("**💭 Utente bloccato.**")
+            return await block.edit("**⛔️ Utente bloccato.**")
 
             if block.reply_to_msg_id:
                 reply = await block.get_reply_message()
@@ -233,7 +233,7 @@ async def unblockpm(unblock):
                     "`**💭 Questo utente non è bloccato!**")
             else:
                 return await unblock.edit(
-                    "**💭 ASH ti ha sbloccato! Ora potradi di nuovo scrivergli in privato!**")
+                    "**💭 ASH ti ha sbloccato! Ora potrai di nuovo scrivergli!**")
 
             await unblock.client(UnblockRequest(replied_user.user.id))
 
