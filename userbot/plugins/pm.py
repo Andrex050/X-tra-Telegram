@@ -37,7 +37,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await PREV_REPLY_MESSAGE[chat.id].delete()
                     del PREV_REPLY_MESSAGE[chat.id]
                 pmpermit_sql.approve(chat.id, reason)
-                await event.edit("Approved Nibba [{}](tg://user?id={})".format(firstname, chat.id))
+                await event.edit("💭 [{}](tg://user?id={}) **approvato a scrivermi in PM.*".format(firstname, chat.id))
                 await asyncio.sleep(3)
                 await event.delete()
 
@@ -51,7 +51,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             if not pmpermit_sql.is_approved(chat.id):
                 if not chat.id in PM_WARNS:
                     pmpermit_sql.approve(chat.id, "outgoing")
-                    bruh = "__Added user to approved pms cuz outgoing message >~<__"
+                    bruh = "**💭 Utente automaticamente approvato.**"
                     rko = await borg.send_message(event.chat_id, bruh)
                     await asyncio.sleep(3)
                     await rko.delete()
@@ -68,7 +68,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         if event.is_private:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
-                await event.edit(" ███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\nFuck Off Bitch, Now You Can't Message Me..[{}](tg://user?id={})".format(firstname, chat.id))
+                await event.edit("**💭 Hey [{}](tg://user?id={})!**\n\n⚠️ ASH non dà a nessuno il permesso di scrivergli per motivi che non devi sapere.**\n\n**ℹ️ Se continuerai a mandare messaggi, al quarto che invierai, sarai bloccato!**\n\n**Adios! 🌪**".format(firstname, chat.id))
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
@@ -78,13 +78,13 @@ if Var.PRIVATE_GROUP_ID is not None:
         if event.fwd_from:
             return
         approved_users = pmpermit_sql.get_all_approved()
-        APPROVED_PMs = "Current Approved PMs\n"
+        APPROVED_PMs = "**💭 Lista utenti approvati:**\n"
         if len(approved_users) > 0:
             for a_user in approved_users:
                 if a_user.reason:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
+                    APPROVED_PMs += f"• [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
                 else:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
+                    APPROVED_PMs += f"• [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
         else:
             APPROVED_PMs = "no Approved PMs (yet)"
         if len(APPROVED_PMs) > 4095:
@@ -95,7 +95,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     out_file,
                     force_document=True,
                     allow_cache=False,
-                    caption="Current Approved PMs",
+                    caption="Approvato!",
                     reply_to=event
                 )
                 await event.delete()
@@ -147,9 +147,6 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
           
-        if any([x in event.raw_text for x in ("/start", "1", "2", "3", "4", "5")]):
-            return
-
         if not pmpermit_sql.is_approved(chat_id):
             # pm permit
             await do_pm_permit_action(chat_id, event)
@@ -167,7 +164,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             the_message = ""
             the_message += "#BLOCKED_PMs\n\n"
             the_message += f"[User](tg://user?id={chat_id}): {chat_id}\n"
-            the_message += f"Message Count: {PM_WARNS[chat_id]}\n"
+            the_message += f"Messaggi inviati: {PM_WARNS[chat_id]}\n"
             # the_message += f"Media: {message_media}"
             try:
                 await event.client.send_message(
