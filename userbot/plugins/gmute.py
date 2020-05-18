@@ -26,7 +26,7 @@ async def startgmute(event):
     try:
         mute(userid, "gmute")
     except Exception as e:
-        await event.edit("**❌ ERRORE:** " + str(e))
+        await event.edit("**❌ ERRORE!**\nℹ️ **Errore:** " + str(e))
     else:
         await event.edit("**🔇 Utente mutato globalmente!**")
 
@@ -47,16 +47,16 @@ async def endgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await event.edit("**❌ Errore:** `Rispondi ad un messaggio.`")
+        return await event.edit("**❌ Perfavore rispondi ad un messaggio.**")
     chat_id = event.chat_id
     if not is_muted(userid, "gmute"):
         return await event.edit("**💭 Questo utente è già mutato!*")
     try:
         unmute(userid, "gmute")
     except Exception as e:
-        await event.edit("**❌ ERRORE:** " + str(e))
+        await event.edit("**❌ ERRORE!**\nℹ️ **Errore:** " + str(e))
     else:
-        await event.edit("**🔊 Utente smutato globalmente!**")
+        await event.edit("**🔊 Utente smutato correttamente!**")
 @command(outgoing=True, pattern=r"^.gmute ?(\d+)?", allow_sudo=True)
 async def startgmute(event):
     private = False
@@ -74,7 +74,7 @@ async def startgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await event.edit("**❌ Errore:** `Rispondi ad un messaggio.`")
+        return await event.edit("**❌ Perfavore rispondi ad un messaggio.**")
     chat_id = event.chat_id
     chat = await event.get_chat()
     if is_muted(userid, "gmute"):
@@ -82,9 +82,9 @@ async def startgmute(event):
     try:
         mute(userid, "gmute")
     except Exception as e:
-        await event.edit("**❌ ERRORE:** " + str(e))
+        await event.edit("**❌ ERRORE!**\nℹ️ **Errore:* " + str(e))
     else:
-        await event.edit("**🔊 Utente smutato globalmente!**")
+        await event.edit("**🔊 Utente smutato correttamente!**")
 
 @command(outgoing=True, pattern=r"^.ungmute ?(\d+)?", allow_sudo=True)
 async def endgmute(event):
@@ -106,11 +106,11 @@ async def endgmute(event):
         return await event.edit("**❌ Perfavore rispondi ad un messaggio.**")
     chat_id = event.chat_id
     if not is_muted(userid, "gmute"):
-        return await event.edit("**🔊 Utente smutato globalmente!**")
+        return await event.edit("**🔊 Utente smutato correttamente!**")
     try:
         unmute(userid, "gmute")
     except Exception as e:
-        await event.edit("**❌ ERRORE:** " + str(e))
+        await event.edit("**❌ ERRORE!**\nℹ️ **Errore:** " + str(e))
     else:
         await event.edit("** 💭 Questo utente non è mutato!**")
 
