@@ -16,7 +16,7 @@
     `APP_ID`:   (Trovala su https://my.telegram.org).
     `API_HASH`:   (Trovala su from https://my.telegram.org).
     
-• ⚠️ L'UserBot non funzionerà senza le Vars precedenti.
+### • ⚠️ L'UserBot non funzionerà senza le Vars precedenti.
 
 
 
