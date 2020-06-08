@@ -16,7 +16,7 @@ async def _(event):
     input_str = event.pattern_match.group(1)
     reply_message = await event.get_reply_message()
     chat = "@NovelCoronaBot"
-    await event.edit("**🔁 Caricamento ...**")
+    await event.edit("**🔁 Caricamento...**")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1124136160))
