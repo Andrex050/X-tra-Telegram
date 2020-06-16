@@ -20,6 +20,6 @@
 
 
 
-### • 💡 ash's link
+### • 💡 Andrex link
 
-• 🔗 https://t.me/zNotASH
+• 🔗 https://t.me/Andrex050
