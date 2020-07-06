@@ -20,7 +20,7 @@ async def TC(e):
 
 @register(outgoing=True, pattern="^[.]lcl$")
 async def lcl(e):
-	await asyncio.wait([e.edit("__**lavati con l'acido e fatti qualche shottino di cloroformio,retard del cazzo✨**__")])
+	await asyncio.wait([e.edit("__**lavati con l'acido e fatti qualche shottino di cloroformio, retard del cazzo✨**__")])
 
 @register(outgoing=True, pattern="^[.]MAM$")
 async def MAM(e):
