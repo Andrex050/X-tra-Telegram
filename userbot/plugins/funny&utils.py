@@ -3,7 +3,7 @@ from telethon.sync import TelegramClient
 from telethon import functions, types
 from userbot.events import register
 
-@register(outgoing=True, pattern="^.ficca$")
+@register(outgoing=True, pattern="^[.]ficca$")
 async def ficca(e):
   for i in range(5):
     await asyncio.wait([e.edit("👉🏻👌🏻 OHH")])
@@ -14,19 +14,19 @@ async def ficca(e):
     await asyncio.sleep(0.2)
   await asyncio.wait([e.edit("OHHSSYY💦!")])
 
-@register(outgoing=True, pattern="^.TC$")
+@register(outgoing=True, pattern="^[.]TC$")
 async def TC(e):
 	await asyncio.wait([e.edit("**Trisomico Cerebroleso con la 104**♿")])
 
-@register(outgoing=True, pattern="^.lcl$")
+@register(outgoing=True, pattern="^[.]lcl$")
 async def lcl(e):
 	await asyncio.wait([e.edit("__**lavati con l'acido e fatti qualche shottino di cloroformio,retard del cazzo✨**__")])
 
-@register(outgoing=True, pattern="^.MAM$")
+@register(outgoing=True, pattern="^[.]MAM$")
 async def MAM(e):
 	await asyncio.wait([e.edit("**ma ammazzati coglione faccia di merda🤡**")])
 
-@register(outgoing=True, pattern="^.niceText$")
+@register(outgoing=True, pattern="^[.]niceText$")
 async def setNiceText(e):
   if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
     global autoNiceText
@@ -53,18 +53,18 @@ async def BroadCast(e):
   await asyncio.wait([e.client.send_message(chat, mex) for chat in chats])
   await e.edit("**Messaggio inviato a tutti i gruppi e canale in qui sei presente! by @Andrex050✏️")      
 
-@register(outgoing=True, pattern="^.mex")
+@register(outgoing=True, pattern="^[.]mex")
 async def setMessage(e):
   if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
     global message
     message = str(e.text[5:])
     await e.edit("`Messaggio impostato correttamente!`")
 
-@register(outgoing=True, pattern="^.pp$")
+@register(outgoing=True, pattern="^[.]pp$")
 async def dev(e):
   await asyncio.wait([e.edit("** paypal.me/Andrex90 👈  **")])
 
-@register(outgoing=True, pattern="^.rep$")
+@register(outgoing=True, pattern="^[.]rep$")
 async def dev(e):
   await asyncio.wait([e.edit("** @AndrexFeedback 👈 **")])
 
