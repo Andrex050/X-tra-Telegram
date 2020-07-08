@@ -5,7 +5,7 @@ from userbot import bot
 from userbot.events import register
 
 @register(outgoing=True, pattern="^.hello$")
-async def kk(event):
+async def hello(event):
     await event.edit("\n**╔┓┏╦━━╦┓╔┓╔━━╗**"
 		     "\n**║┗┛║┗━╣┃║┃║╯╰║**"
 		     "\n**║┏┓║┏━╣┗╣┗╣╰╯║**"
