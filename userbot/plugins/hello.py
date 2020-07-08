@@ -4,7 +4,7 @@ from telethon.errors.rpcerrorlist import MessageIdInvalidError
 from userbot import bot
 from userbot.events import register
 
-@register(outgoing=True, pattern="^.sup$")
+@register(outgoing=True, pattern="^.hello$")
 async def kk(event):
     await event.edit("\n**╔┓┏╦━━╦┓╔┓╔━━╗**"
 		     "\n**║┗┛║┗━╣┃║┃║╯╰║**"
