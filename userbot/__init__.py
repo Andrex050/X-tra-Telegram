@@ -155,21 +155,12 @@ for binary, path in binaries.items():
     os.chmod(path, 0o755)
 
 # Global Variables
-SNIPE_TEXT = ""
 COUNT_MSG = 0
-BRAIN_CHECKER = []
 USERS = {}
-WIDE_MAP = dict((i, i + 0xFEE0) for i in range(0x21, 0x7F))
-WIDE_MAP[0x20] = 0x3000
 COUNT_PM = {}
 LASTMSG = {}
-ISAFK = False
-ENABLE_KILLME = True
-SNIPE_ID = 0
-MUTING_USERS = {}
-MUTED_USERS = {}
 CMD_HELP = {}
+ISAFK = False
 AFKREASON = None
-DISABLE_RUN = False
 # End of PaperPlaneExtended Support Vars
 
