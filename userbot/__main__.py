@@ -22,11 +22,7 @@ CURSOR.execute("""SELECT * FROM BRAIN1""")
 
 ALL_ROWS = CURSOR.fetchall()
 
-INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
 
-             '\n  Tip: Use Country Code along with No.' \
-
-             '\n       Recheck your Phone Number'
 
 for i in ALL_ROWS:
 
