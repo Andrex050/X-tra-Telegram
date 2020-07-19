@@ -11,7 +11,42 @@ from pathlib import Path
 import asyncio
 import telethon.utils
 import heroku3
+from userbot import BRAIN_CHECKER
+from userbot.modules import ALL_MODULES
 
+DB = connect("learning-data-root.check")
+
+CURSOR = DB.cursor()
+
+CURSOR.execute("""SELECT * FROM BRAIN1""")
+
+ALL_ROWS = CURSOR.fetchall()
+
+INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
+
+             '\n  Tip: Use Country Code along with No.' \
+
+             '\n       Recheck your Phone Number'
+
+for i in ALL_ROWS:
+
+    BRAIN_CHECKER.append(i[0])
+
+connect("learning-data-root.check").close()
+
+try:
+
+    bot.start()
+
+except PhoneNumberInvalidError:
+
+    print(INVALID_PH)
+
+    exit(1)
+
+for module_name in ALL_MODULES:
+
+    imported_module = import_module("userbot.modules." + module_name)
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
