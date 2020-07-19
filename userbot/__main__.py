@@ -15,30 +15,14 @@ from userbot import BRAIN_CHECKER
 from userbot.modules import ALL_MODULES
 
 DB = connect("learning-data-root.check")
-
 CURSOR = DB.cursor()
-
 CURSOR.execute("""SELECT * FROM BRAIN1""")
-
 ALL_ROWS = CURSOR.fetchall()
 
-
-
 for i in ALL_ROWS:
-
     BRAIN_CHECKER.append(i[0])
-
-connect("learning-data-root.check").close()
-
-try:
-
-    bot.start()
-
-except PhoneNumberInvalidError:
-
-    print(INVALID_PH)
-
-    exit(1)
+db.close()
+bot.start()
 
 for module_name in ALL_MODULES:
 
