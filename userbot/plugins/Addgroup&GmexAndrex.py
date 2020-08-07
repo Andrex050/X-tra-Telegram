@@ -1,3 +1,5 @@
+#Copyright by @Andrex050 on telegram
+
 import os
 if 1 == 1:
     try:
@@ -83,4 +85,4 @@ if 1 == 1:
         chats = all_chat()
         chats = chats if chats is not None else []
         chatlist = "\n".join([f"`{x.chat}`" for x in chats])
-        await event.edit(f"📜 Hai {len(chats)} chat in lista per il gmex.\n\n🖋️ Elenco:\n{chatlist}")
+        await event.edit(f"📜 Hai {len(chats)} chat in lista per il gmex.\n🖋️ Elenco:\n{chatlist}")
