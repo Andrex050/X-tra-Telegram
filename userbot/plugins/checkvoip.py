@@ -1,3 +1,5 @@
+#Copyright by andrex ubot
+
 import asyncio
 
 from userbot.events import register
@@ -16,11 +18,11 @@ async def checkVoip(e):
       else:
         name = user.user.first_name
       if dc_id == 4:
-        await e.edit(f"**L'Utente » {name}\nnon è un voip ✔️**")
+        await e.edit(f"**VoIP Checker**\n__🔍 L'Utente » {name} non risulta essere VoIP. ❌\n📡 DataCenter ➮ 🌍 4 - Europa__")
       else:
-        await e.edit(f"**L'Utente » {name}\nÈ UN VOIP ⚠️**")
+        await e.edit(f"**VoIP Checker**\n__🔍 L'Utente » {name} risulta essere VoIP. ✅\n📡 DataCenter ➮ 🌍 1 - America__")
     except:
-      await e.edit("**❌ L'Utente deve avere un immagine di profilo ❌**")
+      await e.edit("__**❌ Per vedere se è un voip l'utente deve avere un immagine di profilo ❌**__")
   else:
     get = e.text.split(" ", 1)[1]
     try:
@@ -32,8 +34,8 @@ async def checkVoip(e):
       else:
         name = user.user.first_name
       if dc_id == 4:
-        await e.edit(f"**✅ {name} non è un voip ✅**")
+        await e.edit(f"**VoIP Checker**\n__🔍 L'Utente » {name} non risulta essere VoIP. ❌\n📡 DataCenter ➮ 🌍 4 - Europa__")
       else:
-        await e.edit(f"**⚠️ {name} È UN VOIP ⚠️**")
+        await e.edit(f"**VoIP Checker**\n__🔍 L'Utente » {name} risulta essere VoIP. ✅\n📡 DataCenter ➮ 🌍 1 - America__")
     except:
       await e.edit("**❌ Utente Non Trovato ❌**")
