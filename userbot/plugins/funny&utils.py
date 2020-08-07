@@ -36,22 +36,7 @@ async def setNiceText(e):
     else:
       autoNiceText = True
       await e.edit("`Animazione Testo Attivata!`")
-
-@register(outgoing=True, pattern="^[.]gmex ")
-async def BroadCast(e):
-  global exempted
-  mex = e.text.split(" ", 1)[1]
-  Uauzs = await e.client(functions.messages.GetAllChatsRequest([0]))
-  chattezzs = []
-  for i in Uauzs.chats:
-    if not i.id in chattezzs:
-      chattezzs.append(i.id)
-  chats = []
-  for i in chattezzs:
-    if not str(i) in exempted:
-      chats.append(i)
-  await asyncio.wait([e.client.send_message(chat, mex) for chat in chats])
-  await e.edit("**Messaggio inviato a tutti i gruppi e canale in qui sei presente! by @Andrex050✏️")      
+      
 
 @register(outgoing=True, pattern="^[.]mex")
 async def setMessage(e):
